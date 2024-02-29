@@ -1,3 +1,4 @@
+import { format } from 'date-fns'
 import { FileDown, Loader2, Undo2 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
@@ -36,9 +37,26 @@ export function EditorImage() {
     try {
       setIsLoadingGenerateUniqueDocument(true)
 
-      await api.post('/scraping/image/generate-document', {
-        content: scrapingImage.data,
-      })
+      const response = await api.post(
+        '/scraping/image/generate-document',
+        {
+          content: scrapingImage.data,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      )
+
+      const currentDate = new Date()
+      const formatDate = format(currentDate, 'dd-MM-yyyy-HH-mm-ss')
+      const link = document.createElement('a')
+      link.href = `data:application/pdf;base64,${response.data}`
+      link.download = `${formatDate}-image.pdf`
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
 
       setIsLoadingGenerateUniqueDocument(false)
       toast({

@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
+import { format } from 'date-fns'
 import { FileDown, Loader2, Undo2 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
@@ -90,10 +91,27 @@ export function Editor() {
         (item: { page: string }) => item.page === currentPage,
       )
 
-      await api.post('/scraping/website/generate-document', {
-        page: currentPage,
-        content: findUniquePage.result,
-      })
+      const response = await api.post(
+        '/scraping/website/generate-document',
+        {
+          page: currentPage,
+          content: findUniquePage.result,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      )
+
+      const currentDate = new Date()
+      const formatDate = format(currentDate, 'dd-MM-yyyy-HH-mm-ss')
+      const link = document.createElement('a')
+      link.href = `data:application/pdf;base64,${response.data}`
+      link.download = `${formatDate}-website.pdf`
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
 
       setIsLoadingGenerateUniqueDocument(false)
       toast({
@@ -116,9 +134,26 @@ export function Editor() {
         String(localStorage.getItem('orderedTexts')),
       )
 
-      await api.post('/scraping/website/generate-all-document', {
-        content: orderedTextsUpdated,
-      })
+      const response = await api.post(
+        '/scraping/website/generate-all-document',
+        {
+          content: orderedTextsUpdated,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      )
+
+      const currentDate = new Date()
+      const formatDate = format(currentDate, 'dd-MM-yyyy-HH-mm-ss')
+      const link = document.createElement('a')
+      link.href = `data:application/pdf;base64,${response.data}`
+      link.download = `${formatDate}-website.pdf`
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
 
       setIsLoadingGenerateAllDocument(false)
 
