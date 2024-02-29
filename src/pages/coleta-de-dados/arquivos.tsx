@@ -77,8 +77,8 @@ export function ScrapingFiles() {
           Coleta de dados em arquivos
         </h1>
         <p className="mt-2 max-w-md text-muted-foreground">
-          Nesse caso você pode fornecer arquivos para que o motor colete as
-          informações necessárias.
+          Nesse caso, você pode fornecer arquivos para que o nosso motor colete
+          as informações necessárias.
         </p>
       </div>
 
@@ -142,7 +142,7 @@ export function ScrapingFiles() {
             showLineNumbers
             language="json"
             theme={dracula}
-            text={`curl --request POST \n --url http://localhost:3001/v1/scraping/file \n --header 'Content-Type: multipart/form-data' \n --header 'User-Agent: insomnia/8.6.1' \n --form pdfFile=@/Users/rafaelpereira/Downloads/Jul.IA.pdf`}
+            text={`curl --request POST \n --url https://backend.dev.studio.resolv.ai/v1/scraping/file \n --header 'Content-Type: multipart/form-data' \n --header 'User-Agent: insomnia/8.6.1' \n --form pdfFile=@/Users/[YOUR_USER]/Downloads/Jul.IA.pdf`}
           />
         </div>
 

@@ -67,7 +67,7 @@ export function Header() {
           <ThemeToggle />
 
           <Link
-            to=""
+            to="https://github.com/rafaelppereira/scraping-data-resolv"
             target="_blank"
             className="flex h-10 w-10 items-center justify-center rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground"
           >

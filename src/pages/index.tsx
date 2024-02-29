@@ -23,14 +23,14 @@ export function Home() {
               Scraping de dados
             </h1>
             <p className="mt-2 max-w-md text-muted-foreground">
-              Esse projeto foi criado com o objetivo de dar uma forma para obter
-              dados de websites, arquivos e imagens.
+              Este projeto foi concebido com o propósito de proporcionar uma
+              maneira de obter dados de websites, arquivos e imagens.
             </p>
           </div>
 
           <div className="flex w-full flex-col items-start gap-1 lg:items-end">
             <Link
-              to=""
+              to="https://github.com/rafaelppereira/scraping-data-resolv"
               target="_blank"
               className="mt-2  flex h-10 items-center rounded-md border border-input bg-background px-4 py-2 text-sm hover:bg-accent hover:text-accent-foreground"
             >
@@ -58,8 +58,8 @@ export function Home() {
             <CardHeader>
               <CardTitle>Scraping em website</CardTitle>
               <CardDescription>
-                Faça a coleta de dados em um website passando apenas a URL base
-                e nosso motor irá mapear todas as páginas existentes dentro.
+                Realize a coleta de dados em um website fornecendo apenas a URL
+                base, e nosso mecanismo irá mapear todas as páginas.
               </CardDescription>
             </CardHeader>
 
@@ -77,8 +77,8 @@ export function Home() {
             <CardHeader>
               <CardTitle>Scraping em arquivos</CardTitle>
               <CardDescription>
-                Forneça um arquivo CSV, PDF ou DOCK que nosso motor irá analizar
-                e trazer os resultados mais interessante.
+                Forneça um arquivo CSV, PDF ou XLSX que nosso motor irá analisar
+                e extrair os resultados mais relevantes para você.
               </CardDescription>
             </CardHeader>
 
@@ -96,8 +96,8 @@ export function Home() {
             <CardHeader>
               <CardTitle>Scraping em imagens</CardTitle>
               <CardDescription>
-                Abasteça nossa inteligência com uma imagem que iremos retornar à
-                você as informações mais importantes.
+                Alimente nossa inteligência com uma imagem e retornaremos as
+                informações mais relevantes para você.
               </CardDescription>
             </CardHeader>
 

@@ -155,8 +155,8 @@ export function Editor() {
             Editor de conteúdo
           </h1>
           <p className="mt-2 max-w-lg text-muted-foreground">
-            Vê necessidade de editor algum conteúdo capturado pelo seu scraping?
-            Basta modificar as informações e gerar seu PDF.
+            Sentiu a necessidade de editar algum conteúdo capturado pelo
+            scraping? Basta modificar as informações e gerar seu PDF.
           </p>
         </div>
 

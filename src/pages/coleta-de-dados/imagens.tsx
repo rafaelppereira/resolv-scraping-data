@@ -77,7 +77,7 @@ export function ScrapingImages() {
           Coleta de dados em imagens
         </h1>
         <p className="mt-2 max-w-md text-muted-foreground">
-          Nesse caso você pode fornecer imagens para que o motor colete as
+          Nesse caso, você pode fornecer imagens para que o motor colete as
           informações necessárias.
         </p>
       </div>
@@ -142,7 +142,7 @@ export function ScrapingImages() {
             showLineNumbers
             language="json"
             theme={dracula}
-            text={`curl --request GET \n --url 'http://localhost:3001/v1/scraping/website?website=https%3A%2F%2Fexample.com' \n --header 'User-Agent: insomnia/8.6.1'`}
+            text={`curl --request POST \n --url https://backend.dev.studio.resolv.ai/v1/scraping/image \n --header 'Content-Type: multipart/form-data' \n --header 'User-Agent: insomnia/8.6.1' \n --form image=@/Users/[YOUR_USER]/Downloads/882244_348322695286453_798200411_o.jpg`}
           />
         </div>
 

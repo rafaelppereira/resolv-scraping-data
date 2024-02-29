@@ -110,8 +110,8 @@ export function ScrapingWebsite() {
             Coleta de dados em website
           </h1>
           <p className="mt-2 max-w-md text-muted-foreground">
-            Nesse caso você pode fornecer apenas uma URL principal do website
-            que deseja capturar os dados.
+            Nesse caso, você só precisa fornecer a URL principal do website que
+            deseja capturar os dados.
           </p>
         </div>
 
@@ -137,7 +137,7 @@ export function ScrapingWebsite() {
                 <Checkbox checked={true} disabled className="mt-1" />
                 <span className="max-w-md text-sm text-muted-foreground">
                   Ao clicar em `Coletar dados` você concorda em utilizar os
-                  dados coletados com responsabilidade
+                  dados coletados com responsabilidade.
                 </span>
               </div>
 
@@ -164,7 +164,7 @@ export function ScrapingWebsite() {
               showLineNumbers
               language="json"
               theme={dracula}
-              text={`curl --request GET \n --url 'http://localhost:3001/v1/scraping/website?website=https%3A%2F%2Fexample.com' \n --header 'User-Agent: insomnia/8.6.1'`}
+              text={`curl --request GET \n --url 'https://backend.dev.studio.resolv.ai/v1/scraping/website?website=https%3A%2F%2Fexample.com' \n --header 'User-Agent: insomnia/8.6.1'`}
             />
           </div>
 
